@@ -4,6 +4,9 @@ const navMenu = document.querySelectorAll(".nav-links");
 const statusInfo = document.querySelector("#status-info");
 const statusInfoText = document.querySelector("#status-info-text");
 
+var isOpen = false;
+
+
 // formats the numbers to include commas
 function formatNumber(num) {
     return String(new Intl.NumberFormat("en-GB").format(num));
