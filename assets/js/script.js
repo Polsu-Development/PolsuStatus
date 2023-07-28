@@ -6,7 +6,6 @@ const statusInfoText = document.querySelector("#status-info-text");
 
 var isOpen = false;
 
-
 // formats the numbers to include commas
 function formatNumber(num) {
     return String(new Intl.NumberFormat("en-GB").format(num));
@@ -121,6 +120,8 @@ hamburger.addEventListener("click", () => {
 // checks to see if a link has been clicked to hide the nav
 document.querySelectorAll(".nav-link").forEach((n) =>
     n.addEventListener("click", () => {
+        document.body.style.overflow = "unset";
+        isOpen = false;
         hamburger.classList.remove("active");
         navMenu.forEach((item) => {
             item.classList.remove("active");
