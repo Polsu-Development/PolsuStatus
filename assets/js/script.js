@@ -103,6 +103,12 @@ async function fetchData() {
 
 // trigger the slide in
 hamburger.addEventListener("click", () => {
+    if (!isOpen) {
+        document.body.style.overflow = "hidden";
+    } else {
+        document.body.style.overflow = "unset";
+    }
+    isOpen = !isOpen;
     hamburger.classList.toggle("active");
     navMenu.forEach((item) => {
         item.classList.toggle("active");
