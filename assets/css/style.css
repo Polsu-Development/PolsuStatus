@@ -17,11 +17,10 @@
 }
 
 html {
-    scroll-behavior: smooth;
-    overflow-x: hidden;
     background-color: var(--dark-grey);
     color: var(--white);
     font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+    scroll-behavior: smooth
 }
 
 a {
