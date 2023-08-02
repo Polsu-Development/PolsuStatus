@@ -10,11 +10,9 @@
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://polsu.xyz/" />
     <meta property="og:image" content="https://polsu.xyz/assets/polsu_.png" />
-    <meta property="og:description" 
-        content="Polsu's realtime status." />
+    <meta property="og:description" content="Polsu's realtime status." />
     <meta name="theme-color" content="#38468F">
-    <meta name="description" 
-        content="Polsu's realtime status." />
+    <meta name="description" content="Polsu's realtime status." />
     <meta name="keywords"
         content="polsu, discord, polsu discord, hypixel, bedwars, minecraft, bot, polsu bot, polsu status">
 
@@ -74,7 +72,8 @@
         <div class="flex horizontally-centered vertically-centered page-margin">
             <div class="flex col horizontally-centered space-between header-width">
                 <header class="flex col text-center">
-                    <h1>Status</h1>
+                    <h1>Status<p id="version"></p>
+                    </h1>
                     <p class="hide" id="status-info"><span class="total-shards">0</span> Total Shards | <span
                             id="shards-online">0</span>/<span class="total-shards">0</span> Online</p>
                     <p id="status-info-text">Loading Status...</p>
@@ -107,7 +106,7 @@
             <div class="flex col stats-row">
                 <div class="flex horizontally-centered stat-card vertically-centered">
                     <div class="flex col">
-                        <h3 class="stat-card-stat stats-servers">0+</h3>
+                        <h3 class="stat-card-stat stats-servers">0</h3>
                         <p>Servers</p>
                     </div>
                     <svg width="48" height="48" viewBox="0 0 49 49" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -118,7 +117,7 @@
                 </div>
                 <div class="flex horizontally-centered stat-card vertically-centered">
                     <div class="flex col">
-                        <h3 class="stat-card-stat stats-channels">0+</h3>
+                        <h3 class="stat-card-stat stats-channels">0</h3>
                         <p>Channels</p>
                     </div>
                     <svg width="48" height="48" viewBox="0 0 49 49" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -135,7 +134,7 @@
                 </div>
                 <div class="flex horizontally-centered stat-card vertically-centered">
                     <div class="flex col">
-                        <h3 class="stat-card-stat stats-users">0+</h3>
+                        <h3 class="stat-card-stat stats-users">0</h3>
                         <p>Users</p>
                     </div>
                     <svg width="48" height="48" viewBox="0 0 48 49" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -148,7 +147,7 @@
             <div class="flex col stats-row">
                 <div class="flex horizontally-centered stat-card vertically-centered">
                     <div class="flex col">
-                        <h3 class="stat-card-stat stats-accounts">0+</h3>
+                        <h3 class="stat-card-stat stats-accounts">0</h3>
                         <p>Accounts</p>
                     </div>
                     <svg width="48" height="48" viewBox="0 0 49 53" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -176,12 +175,47 @@
                 </div>
                 <div class="flex horizontally-centered stat-card vertically-centered">
                     <div class="flex col">
-                        <h3 class="stat-card-stat stats-players">0+</h3>
+                        <h3 class="stat-card-stat stats-sessions">0</h3>
+                        <p>Sessions</p>
+                    </div>
+                    <svg width="48" height="48" viewBox="0 0 49 53" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M40.4999 6H28.4999C28.2702 5.99998 28.0435 6.05271 27.8374 6.15414C27.6313 6.25557 27.4513 6.40298 27.3111 6.585L15.3111 22.1869L13.4999 20.3794C13.2213 20.1004 12.8904 19.8792 12.5262 19.7282C12.162 19.5772 11.7716 19.4995 11.3774 19.4995C10.9831 19.4995 10.5928 19.5772 10.2286 19.7282C9.86436 19.8792 9.5335 20.1004 9.25488 20.3794L6.8755 22.7606C6.59686 23.0392 6.37582 23.37 6.22501 23.734C6.0742 24.098 5.99658 24.4882 5.99658 24.8822C5.99658 25.2762 6.0742 25.6664 6.22501 26.0304C6.37582 26.3944 6.59686 26.7252 6.8755 27.0038L10.6255 30.7538L5.3755 36.0038C5.09686 36.2823 4.87582 36.6131 4.72501 36.9771C4.5742 37.3411 4.49658 37.7313 4.49658 38.1253C4.49658 38.5193 4.5742 38.9095 4.72501 39.2735C4.87582 39.6375 5.09686 39.9683 5.3755 40.2469L7.75488 42.6244C8.31743 43.1866 9.0802 43.5024 9.8755 43.5024C10.6708 43.5024 11.4336 43.1866 11.9961 42.6244L17.2461 37.3744L20.9961 41.1244C21.2748 41.4033 21.6056 41.6246 21.9698 41.7756C22.334 41.9265 22.7244 42.0042 23.1186 42.0042C23.5129 42.0042 23.9033 41.9265 24.2675 41.7756C24.6316 41.6246 24.9625 41.4033 25.2411 41.1244L27.6205 38.7431C27.8992 38.4645 28.1202 38.1338 28.271 37.7698C28.4218 37.4058 28.4994 37.0156 28.4994 36.6216C28.4994 36.2275 28.4218 35.8374 28.271 35.4734C28.1202 35.1093 27.8992 34.7786 27.6205 34.5L25.813 32.6925L41.4149 20.6925C41.5974 20.552 41.7451 20.3713 41.8466 20.1645C41.948 19.9577 42.0005 19.7303 41.9999 19.5V7.5C41.9999 7.10218 41.8418 6.72064 41.5605 6.43934C41.2792 6.15804 40.8977 6 40.4999 6ZM9.87925 40.5L7.49988 38.1225L12.7499 32.8725L15.1274 35.25L9.87925 40.5ZM23.1186 39L8.99988 24.8831L11.3811 22.5L25.4999 36.6206L23.1186 39ZM38.9999 18.7612L23.6736 30.5513L21.6224 28.5L31.0611 19.0613C31.3423 18.7798 31.5002 18.3981 31.5001 18.0003C31.4999 17.6024 31.3417 17.2209 31.0602 16.9397C30.7787 16.6585 30.3971 16.5006 29.9992 16.5008C29.6013 16.5009 29.2198 16.6592 28.9386 16.9406L19.4999 26.3775L17.4505 24.3263L29.2386 9H38.9999V18.7612Z"
+                            fill="white" />
+                    </svg>
+                </div>
+                <div class="flex horizontally-centered stat-card vertically-centered">
+                    <div class="flex col">
+                        <h3 class="stat-card-stat stats-players">0</h3>
                         <p>Players</p>
                     </div>
                     <svg width="48" height="48" viewBox="0 0 48 49" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
                             d="M7.35012 38.5C6.08346 38.5 5.09179 38.075 4.37512 37.225C3.65846 36.375 3.40012 35.2 3.60012 33.7L6.00012 16.95C6.26679 15.1833 7.09179 13.6667 8.47512 12.4C9.85846 11.1333 11.4335 10.5 13.2001 10.5H34.8501C36.6168 10.5 38.1918 11.1333 39.5751 12.4C40.9585 13.6667 41.7835 15.1833 42.0501 16.95L44.4001 33.7C44.6001 35.2 44.3418 36.375 43.6251 37.225C42.9085 38.075 41.9168 38.5 40.6501 38.5C39.8835 38.5 39.2335 38.375 38.7001 38.125C38.1668 37.875 37.7168 37.5667 37.3501 37.2L32.1501 32H15.8501L10.6501 37.2C10.2835 37.5667 9.83346 37.875 9.30012 38.125C8.76679 38.375 8.11679 38.5 7.35012 38.5ZM35.0001 26.5C35.5335 26.5 36.0001 26.3 36.4001 25.9C36.8001 25.5 37.0001 25.0333 37.0001 24.5C37.0001 23.9667 36.8001 23.5 36.4001 23.1C36.0001 22.7 35.5335 22.5 35.0001 22.5C34.4668 22.5 34.0001 22.7 33.6001 23.1C33.2001 23.5 33.0001 23.9667 33.0001 24.5C33.0001 25.0333 33.2001 25.5 33.6001 25.9C34.0001 26.3 34.4668 26.5 35.0001 26.5ZM30.7501 20C31.2835 20 31.7501 19.8 32.1501 19.4C32.5501 19 32.7501 18.5333 32.7501 18C32.7501 17.4667 32.5501 17 32.1501 16.6C31.7501 16.2 31.2835 16 30.7501 16C30.2168 16 29.7501 16.2 29.3501 16.6C28.9501 17 28.7501 17.4667 28.7501 18C28.7501 18.5333 28.9501 19 29.3501 19.4C29.7501 19.8 30.2168 20 30.7501 20ZM15.0001 26.25H17.5001V22.5H21.2501V20H17.5001V16.25H15.0001V20H11.2501V22.5H15.0001V26.25Z"
+                            fill="white" />
+                    </svg>
+                </div>
+            </div>
+            <div class="flex col stats-row">
+                <div class="flex horizontally-centered stat-card vertically-centered">
+                    <div class="flex col">
+                        <h3 class="stat-card-stat stats-code">0</h3>
+                        <p>Lines of code</p>
+                    </div>
+                    <svg width="48" height="48" viewBox="0 0 49 53" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M16 36L4 24L16 12L18.85 14.85L9.65 24.05L18.8 33.2L16 36ZM32 36L29.15 33.15L38.35 23.95L29.2 14.8L32 12L44 24L32 36Z"
+                            fill="white" />
+                    </svg>
+                </div>
+                <div class="flex horizontally-centered stat-card vertically-centered">
+                    <div class="flex col">
+                        <h3 class="stat-card-stat stats-commands">0</h3>
+                        <p>Commands</p>
+                    </div>
+                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M10 4C8.4087 4 6.88258 4.63214 5.75736 5.75736C4.63214 6.88258 4 8.4087 4 10V38C4 39.5913 4.63214 41.1174 5.75736 42.2426C6.88258 43.3679 8.4087 44 10 44H38C39.5913 44 41.1174 43.3679 42.2426 42.2426C43.3679 41.1174 44 39.5913 44 38V10C44 8.4087 43.3679 6.88258 42.2426 5.75736C41.1174 4.63214 39.5913 4 38 4H10ZM8 10C8 9.46957 8.21071 8.96086 8.58579 8.58579C8.96086 8.21071 9.46957 8 10 8H38C38.5304 8 39.0391 8.21071 39.4142 8.58579C39.7893 8.96086 40 9.46957 40 10V38C40 38.5304 39.7893 39.0391 39.4142 39.4142C39.0391 39.7893 38.5304 40 38 40H10C9.46957 40 8.96086 39.7893 8.58579 39.4142C8.21071 39.0391 8 38.5304 8 38V10ZM18.2856 36C19.0032 36 19.6657 35.6155 20.0217 34.9925L31.4505 14.9916C32.2123 13.6586 31.2497 12 29.7144 12V12C28.9968 12 28.3343 12.3845 27.9783 13.0075L16.5495 33.0084C15.7877 34.3414 16.7503 36 18.2856 36V36Z"
                             fill="white" />
                     </svg>
                 </div>
@@ -265,12 +299,8 @@
                     </div>
                     <div class="flex col">
                         <h2 class="footer-subtitle">Legal</h2>
-                        <a class="hover-underline"
-                            href="https://privacy.polsu.xyz/"
-                            target="_blank">Privacy</a>
-                        <a class="hover-underline"
-                            href="https://terms.polsu.xyz/"
-                            target="_blank">Terms</a>
+                        <a class="hover-underline" href="https://privacy.polsu.xyz/" target="_blank">Privacy</a>
+                        <a class="hover-underline" href="https://terms.polsu.xyz/" target="_blank">Terms</a>
                     </div>
                 </div>
             </div>

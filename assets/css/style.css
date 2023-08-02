@@ -365,10 +365,11 @@ main .stat-section {
 
 main .stat-section svg {
     max-width: 100%;
-    display: none;
 }
 
 main .stat-section .stat-card {
+    flex-direction: row-reverse;
+    gap: 1rem;
     background-color: var(--dark-grey);
     padding: clamp(0.5rem, 2vw, 0.75rem) clamp(1rem, 2vw, 2rem);
     border-radius: 6px;

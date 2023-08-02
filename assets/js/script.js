@@ -3,6 +3,7 @@ const year = document.querySelector("#current-year");
 const navMenu = document.querySelectorAll(".nav-links");
 const statusInfo = document.querySelector("#status-info");
 const statusInfoText = document.querySelector("#status-info-text");
+const version = document.querySelector("#version");
 
 var isOpen = false;
 
@@ -20,17 +21,25 @@ function Timeout(time) {
 
 // updates the data on the header + stat component
 function updateStats(data) {
+    version.innerHTML = data.data.polsu.version;
+
     const statsServer = document.querySelector(".stats-servers");
     const statsChannel = document.querySelector(".stats-channels");
     const statsUser = document.querySelector(".stats-users");
     const statsAccounts = document.querySelector(".stats-accounts");
+    const statsSessions = document.querySelector(".stats-sessions");
     const statsPlayers = document.querySelector(".stats-players");
+    const statsCode = document.querySelector(".stats-code");
+    const statsCommands = document.querySelector(".stats-commands");
 
     statsServer.innerText = formatNumber(data.data.polsu.servers);
     statsChannel.innerText = formatNumber(data.data.polsu.channels);
     statsUser.innerText = formatNumber(data.data.polsu.users);
     statsAccounts.innerText = formatNumber(data.data.polsu.accounts);
+    statsSessions.innerText = formatNumber(data.data.polsu.sessions);
     statsPlayers.innerText = formatNumber(data.data.polsu.players);
+    statsCode.innerText = formatNumber(data.data.polsu.code.lines + data.data.api.code.lines);
+    statsCommands.innerText = formatNumber(data.data.polsu.commands);
 }
 
 // updates the shard data
