@@ -4,6 +4,7 @@ const navMenu = document.querySelectorAll(".nav-links");
 const statusInfo = document.querySelector("#status-info");
 const statusInfoText = document.querySelector("#status-info-text");
 const version = document.querySelector("#version");
+const menu = document.querySelector("nav");
 
 var isOpen = false;
 
@@ -140,6 +141,23 @@ document.querySelectorAll(".nav-link").forEach((n) =>
 
 // runs all of the modules once the page has loaded
 window.addEventListener("load", () => {
+    if (document.documentElement.scrollTop > 0) {
+        menu.classList.add("transparency");
+    }
+    else {
+        menu.classList.remove("transparency");
+    }
+
     fetchData();
     year.innerHTML = new Date().getFullYear();
+});
+
+// checks to see if the user has scrolled to add transparency to the nav
+document.addEventListener("scroll", () => {
+    if (document.documentElement.scrollTop > 0) {
+        menu.classList.add("transparency");
+    }
+    else {
+        menu.classList.remove("transparency");
+    }
 });

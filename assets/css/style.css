@@ -179,6 +179,11 @@ nav {
     font-size: 1.25rem;
     z-index: 100;
     position: relative;
+    border-bottom: 1px solid var(--darker-grey);
+}
+
+nav > a {
+    z-index: 2;
 }
 
 nav .polsu-nav-logo img {
@@ -199,13 +204,12 @@ nav .nav-links {
     font-size: 1.5rem;
     justify-content: center;
     align-items: center;
-    backdrop-filter: blur(0px) brightness(100%);
-    -webkit-backdrop-filter: blur(0px) brightness(100%);
     width: 100%;
     height: 100%;
     top: 0;
     left: 0;
     opacity: 0;
+    z-index: 1;
 }
 
 nav .nav-links .container {
@@ -654,6 +658,22 @@ footer .bottom .right p {
 
     main .features-section .section-button {
         width: max-content;
+    }
+
+    .transparency {
+        backdrop-filter: blur(6px);
+        background-color: rgb(25, 26, 28, 0.7);
+        -webkit-backdrop-filter: blur(6px);
+        transition: all 0.5s;
+        border-radius: 0 0 20px 20px;
+        border-bottom: 1px solid rgba(83, 83, 83, 0.9);
+        filter: brightness(110%);;
+    }    
+
+    nav {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
     }
 
     nav .hamburger {
