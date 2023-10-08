@@ -180,6 +180,7 @@ nav {
     z-index: 100;
     position: relative;
     border-bottom: 1px solid var(--darker-grey);
+    transition: all 0.5s;
 }
 
 nav > a {
